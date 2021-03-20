@@ -58,7 +58,7 @@
                 </div>
                 <div class="contacts-mobile">
                     <a href="#map"><svg><use href="local/templates/kantryvet/images/icons-contact.svg#address-green"></use></svg></a>
-                    <svg><use href="local/templates/kantryvet/images/icons-contact.svg#phone-green"></use></svg>
+                    <a class="open-phone"><svg><use href="local/templates/kantryvet/images/icons-contact.svg#phone-green"></use></svg></a>
                 </div>
             </div>
             <div class="header-bottom">
@@ -151,7 +151,7 @@
             <section class="section-services" id="services">
                 <h2 class="service__title">Услуги</h2>
                 <div class="service__list">
-                    <span class="service__item" id="Serv_36" data-services=".SType_26|.SType_25|.SType_49|.SType_10">ТЕРАПИЯ</span>
+                    <span class="service__item selected" id="Serv_36" data-services=".SType_26|.SType_25|.SType_49|.SType_10">ТЕРАПИЯ</span>
                     <span class="service__item" id="Serv_37" data-services=".SType_26|.SType_25|.SType_20">ХИРУРГИЯ</span> 
                     <span class="service__item" id="Serv_38" data-services=".SType_26|.SType_49|.SType_30">УЗИ</span>
                     <span class="service__item" id="Serv_39" data-services=".SType_26|.SType_25">ВАКЦИНАЦИЯ</span>
@@ -162,7 +162,6 @@
                     <span class="service__item" id="Serv_40" data-services=".SType_">ДЕРМАТОЛОГИЯ</span>   
                     <span class="service__item" id="Serv_44" data-services=".SType_28">СТРИЖКА ЖИВОТНЫХ</span>
                 </div>
-                <div class="Founded"></div>
             </section>
 
             <section class="section-doctors" id="doctors">
@@ -344,14 +343,12 @@
 
                 <div class="shedule-mobile">
                     <div class="shedule-mobile__header">
-                        <div class="shedule-mobile__filter">Фильтры</div>
-                        <div class="shedule-mobile__selected">
-                            ВНИИССОК 
-                            <span class="shedule-mobile__cancel"></span>
-                        </div>
-                        <div class="shedule-mobile__selected">
-                            СТРИЖКА ЖИВОТНЫХ
-                            <span class="shedule-mobile__cancel"></span>
+                        <div class="shedule-mobile__filter">Фильтры</div>                        
+                        <div class="shedule-mobile__found Founded">
+                            <div class="found__selected">
+                                ВНИИССОК 
+                                <span></span>
+                            </div>
                         </div>
                     </div>
                     <div class="shedule-mobile__date">
@@ -378,51 +375,50 @@
                             </div>
                             <div class="mobile-filter__item">
                                 <div class="mobile-filter__title">Услуги</div>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_36">
                                     <input type="checkbox">
                                     <span>Терапия</span>
                                 </label>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_37">
                                     <input type="checkbox">
                                     <span>Хирургия</span>
                                 </label>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_38">
                                     <input type="checkbox">
                                     <span>УЗИ</span>
                                 </label>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_39">
                                     <input type="checkbox">
                                     <span>Вакцинация</span>
                                 </label>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_223">
                                     <input type="checkbox">
-                                    <span>Стоматология</span>
+                                    <span>ОФТАЛЬМОЛОГИЯ</span>
                                 </label>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_41">
                                     <input type="checkbox">
                                     <span>Кардиология</span>
                                 </label>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_42">
                                     <input type="checkbox">
                                     <span>Эндокринология</span>
                                 </label>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_43">
                                     <input type="checkbox">
                                     <span>Лаборатория</span>
                                 </label>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_40">
                                     <input type="checkbox">
                                     <span>Дерматология</span>
                                 </label>
-                                <label class="checkbox">
+                                <label class="checkbox mobile-checkbox" data-id="Serv_44">
                                     <input type="checkbox">
                                     <span>Стрижка животных</span>
                                 </label>
-
                             </div>                            
                         </div>
                         <div class="mobile-filter__footer">
-                            <input type="button" class="btn" value="Показать результаты">
+                            <a class="btn mobile-filter-submit">Показать результаты</a>
                         </div>
                     </div>
                 </div>

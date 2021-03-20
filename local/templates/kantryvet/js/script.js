@@ -42,6 +42,14 @@ $(function(){
     });
 
 
+    $(".open-phone").on("click", function(){
+        $(".header-phone__position").addClass("open");
+    });
+    $(".header-phone").on("click", function(){
+        $(".header-phone__position").removeClass("open");
+    });
+
+
     $("body").on("click", function(e){
         if ($(".shedule__month-list").hasClass("open")) {
             var div = $(".shedule__month-list");
@@ -79,8 +87,10 @@ $(function(){
     $(".shedule-mobile__filter").on("click", function(){
         $(".mobile-filter").addClass("open");
     });
-
     $(".mobile-filter__close").on("click", function(){
+        $(".mobile-filter").removeClass("open");
+    });
+    $(".mobile-filter-submit").on("click", function(){
         $(".mobile-filter").removeClass("open");
     });
 

@@ -52,13 +52,18 @@
 }
 
 .shedule-mobile__header {
-    .display-flex();
-    .row-wrap();
+    //.display-flex();
+    //.row-wrap();
+}
+
+.shedule-mobile__found {
+    display: inline;
 }
 
 .shedule-mobile__filter {
     color: @accent;
     cursor: pointer;
+    display: inline-block;
     font-size: 18px;
     font-weight: 900;
     margin: 2px 30px 2px 2px;
@@ -77,24 +82,25 @@
     }
 }
 
-.shedule-mobile__selected {
+.found__selected {
     background-color: @accent;
     border-radius: 15px;
+    display: inline-block;
     font-size: 12px;
     font-weight: 700;
     margin: 2px;
     padding: 5px 28px 5px 12px;
     position: relative;
-}
 
-.shedule-mobile__cancel {
-    background-image: url('@{images}/icon-cross.svg');
-    height: 14px;
-    width: 15px;
-    cursor: pointer;
-    position: absolute;
-    top: 4px;
-    right: 6px;
+    span {
+        background-image: url('@{images}/icon-cross.svg');
+        height: 14px;
+        width: 15px;
+        cursor: pointer;
+        position: absolute;
+        top: 4px;
+        right: 6px;
+    }
 }
 
 .shedule-mobile__date {
@@ -308,7 +314,7 @@
     padding-right: 60px;
     text-align: right;
     width: 250px;
-    
+
     &.selected + .shedule__days .shedule__day-wrap {background-color: #ffe5cb;}
 }
 

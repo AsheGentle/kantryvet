@@ -1352,6 +1352,7 @@ header .social {
   background-color: #f3f3f5;
   color: #202022;
   display: none;
+  overflow: hidden;
   padding: 40px 0;
   text-align: center;
 }
@@ -1424,18 +1425,13 @@ header .social {
   margin-bottom: 10px;
   padding: 0 5px;
 }
-.shedule-mobile__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: row wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  flex-flow: row wrap;
+.shedule-mobile__found {
+  display: inline;
 }
 .shedule-mobile__filter {
   color: #fe9314;
   cursor: pointer;
+  display: inline-block;
   font-size: 18px;
   font-weight: 900;
   margin: 2px 30px 2px 2px;
@@ -1452,16 +1448,17 @@ header .social {
   right: -18px;
   margin-top: -3px;
 }
-.shedule-mobile__selected {
+.found__selected {
   background-color: #fe9314;
   border-radius: 15px;
+  display: inline-block;
   font-size: 12px;
   font-weight: 700;
   margin: 2px;
   padding: 5px 28px 5px 12px;
   position: relative;
 }
-.shedule-mobile__cancel {
+.found__selected span {
   background-image: url('images/icon-cross.svg');
   height: 14px;
   width: 15px;
@@ -4200,6 +4197,59 @@ yx-axis
     display: none;
   }
   .header-phone__position {
+    display: none;
+  }
+  .header-phone__position.open {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+  }
+  .header-phone {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+  }
+  .header-phone__item {
+    background-color: #fff;
+    border-radius: 15px;
+    font-size: 18px;
+    margin: 8px;
+    padding: 4px 16px;
+    text-align: center;
+    width: 240px;
+  }
+  .header-phone__item span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .header-phone__item.orange span {
+    color: #55524f;
+    font-style: normal;
+    vertical-align: baseline;
+  }
+  .header-phone__item.green span {
+    color: #55524f;
+  }
+  .header-phone__toggle {
     display: none;
   }
   .header-bottom {

@@ -605,19 +605,19 @@ var TCJsUtils =
 
 $(document).ready(function(e){
     /*$(".SearchTag .SearchIt").keyup(function(){
-        var thisKey = $(this).val();
-        if (!thisKey) {
-            $(".FindWord").removeClass("showIt");
-        }
-    });*/
+     var thisKey = $(this).val();
+     if (!thisKey) {
+     $(".FindWord").removeClass("showIt");
+     }
+     });*/
 
     /*$(".UnderstandIt").on('click', function(){
-        $(".SearchText").removeClass("ShowItNice");
-        $(".SearchText").addClass("HideItNice");
-    });*/
+     $(".SearchText").removeClass("ShowItNice");
+     $(".SearchText").addClass("HideItNice");
+     });*/
     $(".SearchIt").on('click', function(){
         $(".search__placeholder").hide();
-        
+
     });
     $(document).click(function(event){
         if ($(event.target).closest(".SearchTag").length)
@@ -631,22 +631,22 @@ $(document).ready(function(e){
         event.stopPropagation();
     });
     /*$(".FindWord").on("click", function(){
-        var findit = $('.SearchIt').val();
-        if (findit) {
-            $.ajax({
-                type: "POST",
-                cache: false,
-                url: "/ajax_word.php",
-                data: "name=" + findit,
-                success: function(data){
-                    $(".FindWord").removeClass("showIt");
-                    $(".Explanation").html(data).addClass("showit");
-                }
-            });
-        } else {
-            $(".Explanation").html("Вы забыли ввести интересующее вас слово!").addClass("showit");
-        }
-    });*/
+     var findit = $('.SearchIt').val();
+     if (findit) {
+     $.ajax({
+     type: "POST",
+     cache: false,
+     url: "/ajax_word.php",
+     data: "name=" + findit,
+     success: function(data){
+     $(".FindWord").removeClass("showIt");
+     $(".Explanation").html(data).addClass("showit");
+     }
+     });
+     } else {
+     $(".Explanation").html("Вы забыли ввести интересующее вас слово!").addClass("showit");
+     }
+     });*/
     $(".SearchSubmitDiv").click(function(e){
         $(".SearchIt").prop('disabled', true);
         $.ajax({
@@ -687,6 +687,15 @@ $(document).ready(function(e){
 
 
 $(document).ready(function(e){
+    var preSelectedItem = $(".service__item.selected");
+    var preSelectedId = preSelectedItem.attr("id");
+    var founded = preSelectedItem.html();
+    var iDs = preSelectedItem.attr("data-services");
+    var foundOK = "<div class='found__selected " + preSelectedId + "' data-iDs=" + iDs + ">" + founded + "<span class='" + preSelectedId + "'></span></div>";
+    $(".Founded").append(foundOK);
+    selectedService(preSelectedItem);
+    $(".mobile-checkbox input").prop('checked', false);
+    $(".mobile-checkbox[data-id='" + preSelectedId + "'] input").prop('checked', true);
 
     function selectedService(element){
         var stypes = element.attr('data-services');
@@ -721,21 +730,20 @@ $(document).ready(function(e){
         $(this).removeClass("selected");
 
         if (ok > 0) {
-            console.log("if");
             $("#" + thisId).removeClass("selected");
             $(".Founded").find("." + thisId).remove();
 
+            $(".mobile-checkbox[data-id='" + thisId + "'] input").prop('checked', false);
+
             unSelectedService($(this));
-
         } else {
-            console.log("else");
             $(this).addClass("selected");
+            var founded = $(this).html();
             var iDs = $(this).attr("data-services");
-            //var founded = $(this).html();
-
-            //$(".Founded").addClass("active");
-            var foundOK = "<span class=" + thisId + " class=" + thisId + " data-iDs=" + iDs + "></span>";
+            var foundOK = "<div class='found__selected " + thisId + "' data-iDs=" + iDs + ">" + founded + "<span class='" + thisId + "'></span></div>";
             $(".Founded").append(foundOK);
+
+            $(".mobile-checkbox[data-id='" + thisId + "'] input").prop('checked', true);
 
             selectedService($(this));
         }
@@ -748,4 +756,18 @@ $(document).ready(function(e){
     /*$(".ServicesItem strong").click(function(){
      $('html, body').animate({scrollTop: $('.SpecBlock').offset().top - 160}, 500);
      });*/
+
+    $(".mobile-checkbox input").click(function(){
+        var thisId = $(this).parents(".mobile-checkbox").data("id");
+        console.log(thisId);
+        $(".service__item[id='" + thisId + "']").trigger("click");
+        /*for (var i = 0; i < myArray.length; i++) {
+         $('#Serv_' + myArray[i]).trigger("click");
+         }*/
+    });
+
+    $(".found__selected span").click(function(){
+        var cancelId = $(this).attr("class");
+        $(".service__item[id='" + cancelId + "']").trigger("click");
+    });
 });
