@@ -1,0 +1,58 @@
+body {
+    -webkit-text-size-adjust: 100%;
+    color: @dark;
+    font-size: 14px;
+    margin: 0;
+}
+
+main {
+    .transition();
+}
+
+a {
+    .transition();
+    color: @accent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+img {outline: none; border:none;}
+
+a, a:hover, a:focus,
+input, input:hover, input:focus, input:active,
+select, select:hover, select:focus, select:active,
+textarea, textarea:hover, textarea:focus, textarea:active,
+button, button:hover, button:focus, button:active,
+label, label:hover, label:focus, label:active {outline: none;}
+button::-moz-focus-inner, input::-moz-focus-inner, select::-moz-focus-inner {border: none;}
+
+textarea,
+input,
+select,
+button {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+h1, h2, h3 {
+    line-height: 1.4em;
+    margin: 0 0 20px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 0 0 10px;
+    &:last-child {margin-bottom: 0;}
+}
+
+header, footer, nav, section, main {display: block;}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,140 @@
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    .display-flex();
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+    [dir="rtl"] {
+        .row-reverse-nowrap();
+    }
+}
+.slick-slide {
+    min-height: 1px;
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-arrow {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+    height: 28px;
+    width: 40px;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -14px;
+    z-index: 100;
+    
+    &.slick-disabled {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.slick-prev {
+    background-image: url('@{images}/arrow-prev.svg');
+    background-position: left center;
+    left: 0;
+}
+
+.slick-next {
+    background-image: url('@{images}/arrow-next.svg');
+    background-position: right center;
+    right: 0;
+}
+
+.slick-dots {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+        display: inline-block;
+        margin: 0 4px;
+    }
+
+    button {
+        background-color: #bcbdbe;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 0;
+        padding: 0;
+        height: 10px;
+        width: 10px;
+    }
+
+    .slick-active button {background-color: @accent;}
+}

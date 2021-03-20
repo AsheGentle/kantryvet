@@ -1,0 +1,129 @@
+@media all and (max-width: 1023px) {
+    header {background-color: #fff; padding-bottom: 0 !important; position: fixed; top: 0; left: 0; right: 0; z-index: 1200;}
+    header.scroll {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+        .logo {position: static;}
+        .logo svg {fill: @dark; height: 44px; width: 179px;}
+        .logo svg path:last-child {opacity: 1;}
+    }
+    header.fixed .header-bottom {left: -150%;}
+    header.fixed .header-bottom.open {left: 0;}
+    .header-top {border-bottom: 1px solid #cdcdcd; height: 54px; padding-left: 15px; padding-right: 15px; .main-axis-start();}
+    .menu-mobile {display: block;}
+    .menu-mobile-close {display: block;}
+    .logo-position {height: 44px; width: 179px;}
+    .header-office {display: none;}
+    .header-phone__position {display: none;}
+    .header-bottom {display: block; padding: 20px; position: fixed; top: 0; left: -150%; width: 100%; height: 100%; overflow: hidden; z-index: 2000; .transition();}
+    .header-bottom.open {left: 0;}
+    .menu {margin: 0;}
+    .menu__list {display: block;}
+    .menu__item--main img {display: none;}
+    .menu__item--main > span {display: none;}
+    .submenu {background-color: transparent; border: none; box-shadow: none; display: block; margin-top: 0; padding: 0; position: static; .transform(none);}
+    .submenu::before {display: none;}
+    .submenu::after {display: none;}
+    .submenu a {color: #fff; font-weight: 600; display: block; padding: 12px 0;}
+    .submenu .submenu__item:not(:last-child) {margin-bottom: 0;}
+    .menu .desktop {display: none;}
+    .header-bottom .social {display: none;}
+    .contacts-mobile {.display-flex(); margin-left: auto;}
+    .contacts-mobile a {margin-left: 10px;}
+
+    main {padding-top: 54px;}
+
+    .showcase-static {display: block;}
+    .showcase {display: none !important;}
+
+    .section-search {display: none;}
+
+    .section-services {padding-left: 20px; padding-right: 20px;}
+
+    .section-doctors {padding-left: 20px; padding-right: 20px;}
+    .doctor__slider {margin: 0;}
+
+    .section-shedule {padding-left: 15px; padding-right: 15px;}
+    .shedule {margin: 0;}
+
+    .section-gallery {padding-bottom: 0;}
+    .gallery__wrap {border-radius: 0;}
+    .gallery__title {padding: 15px 20px;}
+
+    .section-reviews {display: none;}
+
+    .section-form {padding-top: 0; padding-bottom: 35px;}
+    .form__wrap {background-position: left center; border-radius: 0; padding: 24px 28px 24px 50%;}
+
+    footer {padding: 30px 15px;}
+}
+
+@media all and (max-width: 900px) {
+    .slider-text-1 {font-size: 18px;}
+    .slider-text-3 {font-size: 21px; margin-top: 10px;}
+
+    .inputbox {padding: 7px 16px;}
+    .btn {font-size: 11px; padding: 9px 16px;}
+
+    .showcase-static .btn {padding: 6px 16px;}
+
+    .section-services {display: block;}
+
+    .section-doctors {position: relative;}
+    .doctor__nav {position: absolute; top: 50%; left: 8px; right: 8px;}
+
+    .slick-arrow {width: 28px;}
+
+    .title-desktop {display: none;}
+    .title-mobile {display: inline-block;}
+
+    .section-shedule {padding-left: 10px; padding-right: 10px;}
+    .shedule__title {padding-left: 5px; padding-right: 5px;}
+    .shedule__office {display: none;}
+    .shedule__phone {display: none;}
+    .shedule__header {display: none;}
+    .shedule__body {height: 324px;}
+    .shedule__row {.column();}
+    .shedule__doctor {.row-nowrap(); .main-axis-start(); padding: 10px 0 0; width: 100%;}
+    .shedule__doctor-name {margin-bottom: 0;}
+    .shedule__doctor-name::after {content: ', '; margin-right: 4px;}
+    .shedule__doctor-position {overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+    .shedule__day {border-left: none; height: 52px; width: 14.2%;}
+    .shedule__day:nth-child(n+7) {display: none;}
+    .shedule__day-wrap {font-size: 14px;}
+
+    /*.shedule {padding: 0;}
+    .shedule__header {display: none;}
+    .shedule {display: none;}*/
+    .shedule-mobile {display: block;}
+
+    .section-form {padding-bottom: 0;}
+    .form__wrap {background-image: none; padding: 20px;}
+    .form {margin-left: 0;}
+
+    .contacts {box-shadow: none; margin-left: 0; padding: 20px 15px;; position: static; width: 100%;}
+    .contacts h2 {display: block;}
+    .map {height: 320px;}
+
+    footer {.column();}
+    footer .logo {display: none;}
+    .footer__column {margin-bottom: 30px;}
+    .footer__column:first-child {.flex-order(2); margin-bottom: 0;}
+    .footer__social {margin-bottom: 10px;}
+    .footer__thanks {margin-bottom: 10px;}
+}
+
+@media all and (max-width: 700px) {
+    .gallery__item {width: 50%;}
+
+    .doctor-modal__info {.column(); .cross-axis-center();}
+}
+
+@media all and (max-width: 500px) {
+    .gallery__item {width: 100%;}
+    .gallery__item:nth-child(n+4) {display: none;}
+    .gallery__list .btn {display: block;}
+
+    .contacts {}
+
+    .shedule__day-wrap {height: 32px; width: 32px; padding: 2px 0;}
+}

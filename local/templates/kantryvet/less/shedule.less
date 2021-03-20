@@ -1,0 +1,357 @@
+.section-shedule {
+    padding-left: ~'calc(50% - 475px)';
+    padding-right: ~'calc(50% - 475px)';
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.shedule__top {
+    .display-flex();
+    .cross-axis-center();
+}
+
+.title-mobile {
+    display: none;
+}
+
+.shedule__office {
+    .display-flex();
+    margin-left: 16px;
+    margin-right: 12px;
+}
+
+.shedule__office-item {
+    border: 1px solid #c9c9c9;
+    border-radius: 15px;
+    color: #898481;
+    cursor: pointer;
+    padding: 7px 12px;
+
+    & + & {margin-left: 6px;}
+
+    &.active {
+        background-color: @accent;
+        border-color: @accent;
+        color: @dark;
+        font-weight: 700;
+    }
+}
+
+.shedule__phone-num {
+    display: none;
+    font-weight: 700;
+    white-space: nowrap;
+
+    &.active {display: inline-block;}
+}
+
+.shedule-mobile {
+    display: none;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+.shedule-mobile__header {
+    .display-flex();
+    .row-wrap();
+}
+
+.shedule-mobile__filter {
+    color: @accent;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 900;
+    margin: 2px 30px 2px 2px;
+    text-decoration: underline;
+    position: relative;
+
+    &::after {
+        border-width: 6px 6px 0;
+        border-style: solid;
+        border-color: @dark transparent transparent;
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -18px;
+        margin-top: -3px;
+    }
+}
+
+.shedule-mobile__selected {
+    background-color: @accent;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 2px;
+    padding: 5px 28px 5px 12px;
+    position: relative;
+}
+
+.shedule-mobile__cancel {
+    background-image: url('@{images}/icon-cross.svg');
+    height: 14px;
+    width: 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 6px;
+}
+
+.shedule-mobile__date {
+    color: @accent;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 900;
+    margin: 15px 30px 0 0;
+    text-decoration: underline;
+    position: relative;
+
+    &::after {
+        border-width: 6px 6px 0;
+        border-style: solid;
+        border-color: @dark transparent transparent;
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -18px;
+        margin-top: -3px;
+    }
+}
+
+.mobile-filter {
+    background-color: #fff;
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 2000;
+
+    &.open {display: block;}
+}
+
+.mobile-filter__header {
+    .display-flex();
+    .cross-axis-center();
+    border-bottom: 1px solid #cdcdcd;
+    padding: 5px 10px;
+}
+
+.mobile-filter__close {
+    background-image: url('@{images}/icon-cross.svg');
+    cursor: pointer;
+    height: 14px;
+    width: 15px;
+    margin-right: 10px;
+}
+
+.mobile-filter__name {
+    color: @accent;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.mobile-filter__clear {
+    color: @accent;
+    font-size: 12px;
+    font-weight: 900;
+    margin-left: auto;
+}
+
+.mobile-filter__body {
+    padding: 10px;
+}
+
+.mobile-filter__item {
+    margin-bottom: 20px;
+}
+
+.mobile-filter__title {
+    color: #575757;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.mobile-filter__footer {
+    padding: 10px;
+    text-align: center;
+}
+
+.shedule {
+    margin: 0 54px;
+}
+
+.shedule__header {
+    .display-flex();
+}
+
+.shedule__header {
+    .display-flex();
+    .cross-axis-center();
+    margin-bottom: 10px;
+}
+
+.shedule__month {
+    .flex(0,0,auto);    
+    padding-right: 78px;
+    position: relative;
+    text-align: right;
+    width: 250px;
+}
+
+.shedule__month-selected {
+    color: @accent;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: underline;
+    position: relative;
+
+    &::after {
+        border-width: 6px 6px 0;
+        border-style: solid;
+        border-color: @dark transparent transparent;
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -18px;
+    }
+}
+
+.shedule__month-list {
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+    opacity: 0;
+    padding: 8px 20px 4px;
+    pointer-events: none;
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    right: 40px;
+    width: 140px;
+    .transform(translateY(50%));
+    .transition();
+
+    &.open {
+        pointer-events: auto;
+        opacity: 1;
+        .transform(translateY(0));
+    }
+}
+
+.shedule__month-item {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.shedule__days-prev {
+    background-image: url('@{images}/arrow-prev.svg');
+    background-position: left center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;    
+    left: -28px;
+    margin-top: -14px;
+    z-index: 100;
+    height: 28px;
+    width: 28px;
+}
+
+.shedule__days-next {
+    background-image: url('@{images}/arrow-next.svg');
+    background-position: right center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;    
+    right: -28px;
+    margin-top: -14px;
+    z-index: 100;
+    height: 28px;
+    width: 28px;
+}
+
+.shedule__days-list {
+    .display-flex();
+}
+
+.shedule__days-item {
+    text-align: center;
+    width: 56px;
+
+    span {
+        display: block;
+        font-weight: 900;
+    }
+}
+
+.shedule__body {
+    height: 256px;
+    overflow: auto;    
+}
+
+.shedule__row {
+    .display-flex();
+    border-bottom: 2px dotted #e0e0e0;
+}
+
+.shedule__doctor {
+    .flex(0,0,auto);
+    .display-flex();
+    .column();
+    .main-axis-center();
+    padding-right: 60px;
+    text-align: right;
+    width: 250px;
+    
+    &.selected + .shedule__days .shedule__day-wrap {background-color: #ffe5cb;}
+}
+
+.shedule__doctor-name {
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+.shedule__doctor-position {}
+
+.shedule__days {
+    .display-flex();
+    position: relative;
+}
+
+.shedule__day {
+    border-left: 2px dotted #e0e0e0;
+    height: 62px;
+    width: 56px;
+    position: relative;
+}
+
+.shedule__day-wrap {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    font-size: 0;
+    line-height: 1;
+    height: 38px;
+    width: 38px;
+    padding: 4px 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    .transform(translate(-50%, -50%));
+}
+
+.shedule__day-num {
+    font-weight: 700;
+}
+/*                       </div>
+                       <div class="">
+                           <div class="">
+                               <div class="">
+                                   пн
+                                   <div class=" */

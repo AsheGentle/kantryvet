@@ -1,0 +1,33 @@
+@images: "images";
+@fonts: "fonts";
+@accent: #fe9314;
+@dark: #55524f;
+@light: #8c8582;
+@width-container: 990px;
+
+.transition(@var: all 0.3s ease) {
+    -webkit-transition: @var;
+    transition: @var;
+}
+
+.clear() {
+    &:after {
+        clear: both;
+        content: '';
+        display: block;
+    }
+}
+
+.transform(@var) {
+    -webkit-transform: @var;
+    -ms-transform: @var;
+    transform: @var;
+}
+
+.absolute-to-center() {
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
