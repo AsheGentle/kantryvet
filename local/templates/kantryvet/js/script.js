@@ -23,15 +23,6 @@ $(function(){
     });
 
 
-    $(".shedule__office-item").on("click", function(){
-        var dataTab = $(this).data("shedule");
-        $(".shedule__office-item").removeClass("active");
-        $(this).addClass("active");
-        $(".shedule__phone-num").removeClass("active");
-        $(".shedule__phone-num[data-shedule='" + dataTab + "']").addClass("active");
-    });
-
-
     $(".shedule__month-selected").on("click", function(){
         $(".shedule__month-list").toggleClass("open");
     });
@@ -108,7 +99,7 @@ $(function(){
     $(".menu-mobile-close").on("click", function(){
         $(".header-bottom").removeClass("open");
     });
-    
+
     $(".header-bottom a[href*='#']").on("click", function(){
         $(".header-bottom").removeClass("open");
     });

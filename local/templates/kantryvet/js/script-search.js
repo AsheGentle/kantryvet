@@ -732,9 +732,7 @@ $(document).ready(function(e){
         if (ok > 0) {
             $("#" + thisId).removeClass("selected");
             $(".Founded").find("." + thisId).remove();
-
             $(".mobile-checkbox[data-id='" + thisId + "'] input").prop('checked', false);
-
             unSelectedService($(this));
         } else {
             $(this).addClass("selected");
@@ -742,7 +740,6 @@ $(document).ready(function(e){
             var iDs = $(this).attr("data-services");
             var foundOK = "<div class='found__selected " + thisId + "' data-iDs=" + iDs + ">" + founded + "<span class='" + thisId + "'></span></div>";
             $(".Founded").append(foundOK);
-
             $(".mobile-checkbox[data-id='" + thisId + "'] input").prop('checked', true);
 
             selectedService($(this));
@@ -759,15 +756,40 @@ $(document).ready(function(e){
 
     $(".mobile-checkbox input").click(function(){
         var thisId = $(this).parents(".mobile-checkbox").data("id");
-        console.log(thisId);
         $(".service__item[id='" + thisId + "']").trigger("click");
-        /*for (var i = 0; i < myArray.length; i++) {
-         $('#Serv_' + myArray[i]).trigger("click");
-         }*/
+    });
+
+    $(".mobile-office input").click(function(){
+        var thisId = $(this).parents(".mobile-office").data("shedule");
+        $(".shedule__office-item[data-shedule='" + thisId + "']").trigger("click");
     });
 
     $(".found__selected span").click(function(){
         var cancelId = $(this).attr("class");
         $(".service__item[id='" + cancelId + "']").trigger("click");
+    });
+
+
+    var dataTabOnLoad = $(".shedule__office-item.active").data("shedule");
+    var foundedOnLoad = $(".shedule__office-item.active").html();
+    $(".shedule__day-wrap").hide();
+    $(".shedule__day-wrap[data-shedule='" + dataTabOnLoad + "']").show();
+    $(".mobile-office input").prop('checked', false);
+    $(".mobile-office[data-shedule='" + dataTabOnLoad + "'] input").prop('checked', true);
+    var foundOK = "<div class='found__selected' data-shedule='" + dataTabOnLoad + "'>" + foundedOnLoad + "</div>";
+    $(".Founded").prepend(foundOK);
+
+    $(".shedule__office-item").on("click", function(){
+        var dataTab = $(this).data("shedule");
+        var founded = $(this).html();
+        $(".shedule__office-item").removeClass("active");
+        $(this).addClass("active");
+        $(".shedule__phone-num").removeClass("active");
+        $(".shedule__phone-num[data-shedule='" + dataTab + "']").addClass("active");
+        $(".shedule__day-wrap").hide();
+        $(".shedule__day-wrap[data-shedule='" + dataTab + "']").show();
+        $(".Founded").find(".found__selected[data-shedule]").remove();
+        var foundOK = "<div class='found__selected' data-shedule='" + dataTab + "'>" + founded + "</div>";
+        $(".Founded").prepend(foundOK);
     });
 });
