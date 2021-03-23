@@ -1201,6 +1201,9 @@ header .social {
   bottom: 20px;
   right: calc(50% - 430px);
 }
+.showcase:not(.slick-initialized) .showcase__item:not(:first-of-type) {
+  display: none;
+}
 .showcase__item {
   background-color: #f2f3f4;
   color: #202022;
@@ -1527,6 +1530,7 @@ header .social {
 }
 .mobile-filter__clear {
   color: #fe9314;
+  cursor: pointer;
   font-size: 12px;
   font-weight: 900;
   margin-left: auto;
@@ -1605,6 +1609,7 @@ header .social {
   top: 100%;
   right: 40px;
   width: 140px;
+  z-index: 100;
   -webkit-transform: translateY(50%);
   -ms-transform: translateY(50%);
   transform: translateY(50%);
@@ -1694,6 +1699,7 @@ header .social {
   font-weight: 700;
   margin-bottom: 4px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .shedule__days {
   display: -webkit-box;
@@ -1726,12 +1732,6 @@ header .social {
 .shedule__day-num {
   font-weight: 700;
 }
-/*                       </div>
-                       <div class="">
-                           <div class="">
-                               <div class="">
-                                   пн
-                                   <div class=" */
 footer {
   display: -webkit-box;
   display: -ms-flexbox;

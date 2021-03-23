@@ -792,4 +792,14 @@ $(document).ready(function(e){
         var foundOK = "<div class='found__selected' data-shedule='" + dataTab + "'>" + founded + "</div>";
         $(".Founded").prepend(foundOK);
     });
+    
+    $(".mobile-filter__clear").on("click", function(){
+        $(".mobile-office[data-shedule='vni'] input").trigger("click");
+        $(".mobile-checkbox input").each(function(){
+            if ($(this).prop("checked")) {
+                var thisId = $(this).parents(".mobile-checkbox").data("id");
+                $(".service__item[id='" + thisId + "']").trigger("click");
+            }
+        });
+    });
 });
