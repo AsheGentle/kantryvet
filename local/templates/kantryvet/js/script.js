@@ -157,6 +157,18 @@ $(function(){
             ]
         });
     }
+    
+    $(".doctor-modal__shedule").on("click", function(){
+        var offsetTop;
+        if ($(document).width() > 1023) {
+            offsetTop = $(".header-bottom").outerHeight();
+        } else {
+            offsetTop = $(".header-top").outerHeight();
+        }
+        $("html, body").animate({
+            scrollTop: $("#shedule").offset().top - offsetTop
+        }, 1000);
+    });
 
     /*if ($(".shedule__days-list").length > 0) {
      $(".shedule__days-list").slick({
