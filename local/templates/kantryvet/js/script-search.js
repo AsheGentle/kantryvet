@@ -699,6 +699,7 @@ $(document).ready(function(e){
 
     function selectedService(element){
         var stypes = element.attr('data-services');
+        console.log(stypes);
         var myArray = stypes.split('|');
         for (var i = 0; i < myArray.length; i++) {
             $(myArray[i]).attr("data-servicOk", "Y");
@@ -746,13 +747,13 @@ $(document).ready(function(e){
         }
         return false;
     });
-    /*$(".Founded span").live("click", function(e){
-     var ThisID = $(this).attr("class");
-     $(".ServicesItem #" + ThisID).trigger("click");
-     });*/
-    /*$(".ServicesItem strong").click(function(){
-     $('html, body').animate({scrollTop: $('.SpecBlock').offset().top - 160}, 500);
-     });*/
+    
+    // добавить после подгрузки расписания
+    //var sheduleIds = $(".found__selected").data("ids");
+    //var myArray = sheduleIds.split('|');
+    //for (var i = 0; i < myArray.length; i++) {
+    //    $(myArray[i]).addClass("selected");
+    //}
 
     $(".mobile-checkbox input").click(function(){
         var thisId = $(this).parents(".mobile-checkbox").data("id");
@@ -764,7 +765,7 @@ $(document).ready(function(e){
         $(".shedule__office-item[data-shedule='" + thisId + "']").trigger("click");
     });
 
-    $(".found__selected span").click(function(){
+    $(".shedule-mobile__found ").on("click", ".found__selected span", function(){
         var cancelId = $(this).attr("class");
         $(".service__item[id='" + cancelId + "']").trigger("click");
     });
@@ -802,4 +803,35 @@ $(document).ready(function(e){
             }
         });
     });
+    
+    
+
+    $(".datepicker__width").text($('#datepicker').val());
+    $("#datepicker").width($(".datepicker__width").width());
+
+    $("#datepicker").datepicker({
+        defaultDate: 0,
+        minDate: 0,
+        maxDate: "+1M +10D",
+        dateFormat: 'd MM',
+        showOptions: {direction: "down"},
+        onSelect: function(_date){
+            var selectDate = $(this).datepicker("getDate"); // Retrieve selected date
+            var startDate = $.datepicker.formatDate("d MM", selectDate);
+            selectDate.setDate(selectDate.getDate() + 6); // Add 7 days
+            var endDate = $.datepicker.formatDate("d MM", selectDate); // Reformat
+            $("#datepicker").val(startDate + " - " + endDate);
+            $(".datepicker__width").text($("#datepicker").val());
+            $("#datepicker").width($(".datepicker__width").width());
+        }
+    });
+
+    var todayDate = new Date();
+    var startDate = $.datepicker.formatDate("d MM", todayDate);
+    todayDate.setDate(todayDate.getDate() + 6);
+    var endDate = $.datepicker.formatDate("d MM", todayDate);
+    $("#datepicker").datepicker("setDate", startDate);
+    $("#datepicker").val(startDate + " - " + endDate);
+    $(".datepicker__width").text($('#datepicker').val());
+    $("#datepicker").width($(".datepicker__width").width());
 });

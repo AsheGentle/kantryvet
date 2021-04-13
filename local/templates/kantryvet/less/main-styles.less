@@ -87,7 +87,7 @@
 
     &.selected {
         background-color: @accent;
-        color: @dark;
+        color: #fff;
         font-weight: 700;
     }
 }
@@ -124,7 +124,7 @@
             background-color: transparent;
             border: 1px solid #cacaca;
             border-radius: 50%;
-            color: @light;
+            color: #8c8582;
             font-size: 18px;
             line-height: 30px;
             text-align: center;
@@ -135,7 +135,7 @@
         .slick-active button {
             background-color: @accent;
             border-color: @accent;
-            color: @dark;
+            color: #fff;
             font-weight: 700;
         }
     }
@@ -152,9 +152,12 @@
 
 .doctor {
     cursor: pointer;
+    outline: none;
     text-align: center;
 
     &:hover {
+        outline: none;
+
         .doctor__image {
             img {opacity: 0.8;}
 
@@ -162,12 +165,17 @@
         }
     }
 
+
+    &:focus {
+        outline: none;
+    }
+
     &.selected {
         .doctor__image {
             img {filter: grayscale(0%);}
         }
         .doctor__name {
-            background-color: #ffe5cb;
+            background-color: #f5e6e9;
         }
     }
 }
@@ -270,7 +278,7 @@
 }
 
 .gallery__wrap {
-    background-color: #fff2e9;
+    background-color: #f5e6e9;
     border-radius: 15px;
     overflow: hidden;
 }
@@ -296,6 +304,7 @@
 }
 
 .gallery__item {
+    height: 226px;
     width: 33.333%;
 
     img {
@@ -357,6 +366,7 @@
 .reviews__content {
     min-height: 0;
     min-width: 0;
+    width: 100%;
 }
 
 .reviews__list {
@@ -471,7 +481,7 @@
     &.active {
         background-color: @accent;
         border-color: @accent;
-        color: @dark;
+        color: #fff;
         font-weight: 700;
     }
 }
@@ -496,7 +506,7 @@
         width: 34px;
         margin-right: 12px;
     }
-    
+
     &.phone {
         font-size: 18px;
         font-weight: 600;

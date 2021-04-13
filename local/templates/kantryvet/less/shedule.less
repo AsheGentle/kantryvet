@@ -32,7 +32,7 @@
     &.active {
         background-color: @accent;
         border-color: @accent;
-        color: @dark;
+        color: #fff;
         font-weight: 700;
     }
 }
@@ -49,11 +49,6 @@
     display: none;
     margin-bottom: 10px;
     padding: 0 5px;
-}
-
-.shedule-mobile__header {
-    //.display-flex();
-    //.row-wrap();
 }
 
 .shedule-mobile__found {
@@ -85,6 +80,7 @@
 .found__selected {
     background-color: @accent;
     border-radius: 15px;
+    color: #fff;
     display: inline-block;
     font-size: 12px;
     font-weight: 700;
@@ -93,7 +89,7 @@
     position: relative;
 
     span {
-        background-image: url('@{images}/icon-cross.svg');
+        background-image: url('@{images}/icon-cross-w.svg');
         display: inline-block;
         height: 14px;
         width: 15px;
@@ -123,6 +119,23 @@
         right: -18px;
         margin-top: -3px;
     }
+}
+
+.datepicker {
+    background-color: transparent;
+    border: none;
+    color: @accent;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: underline;
+    text-transform: lowercase;
+}
+
+.datepicker__width {
+    display: none;
+  white-space: pre;
 }
 
 .mobile-filter {
@@ -254,8 +267,12 @@
 }
 
 .shedule__month-item {
+    cursor: pointer;
     font-size: 16px;
     margin-bottom: 4px;
+
+    &:hover {font-weight: 700;}
+    &:active {text-decoration: underline;}
 }
 
 .shedule__days-prev {
@@ -317,7 +334,7 @@
     text-align: right;
     width: 250px;
 
-    &.selected + .shedule__days .shedule__day-wrap {background-color: #ffe5cb;}
+    &.selected + .shedule__days .shedule__day-wrap {background-color: #f5e6e9;}
 }
 
 .shedule__doctor-name {

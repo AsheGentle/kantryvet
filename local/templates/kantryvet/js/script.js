@@ -23,7 +23,7 @@ $(function(){
     });
 
 
-    $(".shedule__month-selected").on("click", function(){
+    $(document).on("click", ".shedule__month-selected", function(){
         $(".shedule__month-list").toggleClass("open");
     });
 
@@ -105,12 +105,13 @@ $(function(){
     });
 
 
-
-
     if ($(".showcase").length > 0) {
         $(".showcase").slick({
             arrows: false,
-            dots: true
+            dots: true,
+            autoplay: true,
+            fade: true,
+            autoplaySpeed: 5000
         });
     }
 
@@ -157,7 +158,7 @@ $(function(){
             ]
         });
     }
-    
+
     $(".doctor-modal__shedule").on("click", function(){
         var offsetTop;
         if ($(document).width() > 1023) {
@@ -170,20 +171,6 @@ $(function(){
         }, 1000);
     });
 
-    /*if ($(".shedule__days-list").length > 0) {
-     $(".shedule__days-list").slick({
-     infinite: false,
-     asNavFor: '.shedule__list'
-     });
-     }
-     
-     if ($(".shedule__list").length > 0) {
-     $(".shedule__list").slick({
-     infinite: false,
-     arrows: false,
-     asNavFor: '.shedule__days-list'
-     });
-     }*/
 
     if ($(".reviews__list").length > 0) {
         $(".reviews__list").slick();
@@ -225,52 +212,4 @@ $(function(){
             fixedRow.css("padding-bottom", 0);
         }
     }
-
-    /*
-     $(".btn-up").on("click", function () {
-     $("html, body").animate({
-     scrollTop: 0
-     }, 1000);
-     return false;
-     });
-     if ($(window).scrollTop() > 480) {
-     $(".btn-up").addClass("show");
-     } else {
-     $(".btn-up").removeClass("show");
-     }
-     $(window).scroll(function () {
-     if ($(this).scrollTop() > 480) {
-     $(".btn-up").addClass("show");
-     } else {
-     $(".btn-up").removeClass("show");
-     }
-     });
-     
-     
-     $("[data-modal]").on("click", function(){
-     var modalId = $(this).data("modal");
-     $(".modal").removeClass("open");
-     $(modalId).addClass("open");
-     $("body").addClass("overflow");
-     });
-     $(".modal__close").on("click", function(){
-     $(this).parents(".modal").removeClass("open");
-     $("body").removeClass("overflow");
-     });
-     $(".modal").on("click", function(e){
-     var div = $(this).find(".modal__content");
-     if (!div.is(e.target) && div.has(e.target).length === 0) {
-     $(this).removeClass("open");
-     $("body").removeClass("overflow");
-     }
-     });
-     
-     if ($(document).width() > 1001) {
-     
-     } else {
-     
-     }
-     
-     
-     */
 });
